@@ -6,4 +6,5 @@ fn main() {
     println!("Problem 2: {}", pe::p2());
     println!("Problem 15: {}", pe::p15());
     println!("Problem 22: {}", pe::p22());
+    println!("Problem 31: {}", pe::p31());
 }
