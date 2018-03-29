@@ -9,6 +9,8 @@
 //! How many such routes are there through a 20×20 grid?
 //!
 
+use ::util::Factorize;
+
 const GRID_SIZE: (usize, usize) = (20, 20);
 
 #[derive(Debug)]
@@ -17,28 +19,10 @@ struct Product(Vec<usize>);
 #[derive(Debug)]
 struct Fraction(Product, Product);
 
-fn factorize(mut n: usize) -> Vec<usize> {
-    let mut a = Vec::new();
-    while n % 2 == 0 {
-        a.push(2);
-        n /= 2;
-    }
-    let mut f = 3;
-    while n > 1 {
-        if n % f == 0 {
-            a.push(f);
-            n /= f
-        } else {
-            f += 2;
-        }
-    }
-    a
-}
-
 impl Product {
     fn factorial(n: usize) -> Product {
         let mut v = (1..n + 1)
-            .flat_map(|i| factorize(i).into_iter())
+            .flat_map(|i| Factorize::new(i))
             .collect::<Vec<_>>();
         v.sort();
         Product(v)
