@@ -1,3 +1,7 @@
+extern crate num;
+extern crate num_traits;
+extern crate num_bigint;
+
 mod util;
 
 mod p001;
