@@ -16,7 +16,7 @@
 //! hundred natural numbers and the square of the sum.
 //!
 
-pub fn p6() -> String {
+pub fn p006() -> String {
     let sum = (1..100+1).sum::<usize>();
     ((sum * sum) -
         (1..100+1).map(|i| i * i).sum::<usize>()

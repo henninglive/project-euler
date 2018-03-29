@@ -77,7 +77,7 @@ fn binomial_coefficient(n: usize, k: usize) -> usize {
     ).compute()
 }
 
-pub fn p15() -> String {
+pub fn p015() -> String {
     // The number of lattice paths from (0,0) to (n,k) is equal to the
     // binomial coefficient (n + k, k)
 

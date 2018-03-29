@@ -31,7 +31,7 @@ fn recursive(mut value: usize, lvl: usize, count: &mut usize) {
     }
 }
 
-pub fn p31() -> String {
+pub fn p031() -> String {
     let mut count = 0;
     recursive(0, 0, &mut count);
     count.to_string()

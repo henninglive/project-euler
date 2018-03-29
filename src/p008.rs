@@ -51,7 +51,7 @@ static NUMBERS: &'static str = "\
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450";
 
-pub fn p8() -> String {
+pub fn p008() -> String {
     let numbers = NUMBERS.chars()
         .map(|i| i.to_digit(10).unwrap() as u8)
         .collect::<Vec<_>>();

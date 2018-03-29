@@ -10,7 +10,7 @@
 //! Find the product abc.
 //!
 
-pub fn p9() -> String {
+pub fn p009() -> String {
     for a in 1..1000 {
         for b in a..1000 {
             let c = 1000 - (a + b);

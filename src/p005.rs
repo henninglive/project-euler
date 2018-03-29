@@ -12,7 +12,7 @@ use ::util::Factorize;
 
 use std::collections::HashMap;
 
-pub fn p5() -> String {
+pub fn p005() -> String {
     let mut min = HashMap::new();
     for i in 1..20+1 {
         let factors = Factorize::new(i).fold(

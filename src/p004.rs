@@ -28,7 +28,7 @@ fn is_palindrome_base_10(n: usize) -> bool {
     }
 }
 
-pub fn p4() -> String {
+pub fn p004() -> String {
     let mut max = 0;
     for a in (100..1000).rev() {
         for b in (100..1000).rev() {

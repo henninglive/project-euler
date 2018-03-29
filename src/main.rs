@@ -7,16 +7,16 @@ type Problem = fn() -> String;
 
 fn problems() -> BTreeMap<usize, Problem> {
     let mut problems = BTreeMap::new();
-    problems.insert(1, pe::p1 as Problem);
-    problems.insert(2, pe::p2 as Problem);
-    problems.insert(4, pe::p4 as Problem);
-    problems.insert(5, pe::p5 as Problem);
-    problems.insert(6, pe::p6 as Problem);
-    problems.insert(8, pe::p8 as Problem);
-    problems.insert(9, pe::p9 as Problem);
-    problems.insert(15, pe::p15 as Problem);
-    problems.insert(22, pe::p22 as Problem);
-    problems.insert(31, pe::p31 as Problem);
+    problems.insert(1,   pe::p001 as Problem);
+    problems.insert(2,   pe::p002 as Problem);
+    problems.insert(4,   pe::p004 as Problem);
+    problems.insert(5,   pe::p005 as Problem);
+    problems.insert(6,   pe::p006 as Problem);
+    problems.insert(8,   pe::p008 as Problem);
+    problems.insert(9,   pe::p009 as Problem);
+    problems.insert(15,  pe::p015 as Problem);
+    problems.insert(22,  pe::p022 as Problem);
+    problems.insert(31,  pe::p031 as Problem);
     problems
 }
 
@@ -24,10 +24,17 @@ fn main() {
     let problems = problems();
     match std::env::args().nth(1) {
         Some(ref s) if s == "--help" || s == "-h" => {
-            print!(
-"Project Euler is a website(https://projecteuler.net) dedicated to a series of \n\
-computational problems intended to be solved with computer programs.\n\
-This program computes the solution to some of these problems.\n\n\
+            print!("\
+Project Euler is a [website](https://projecteuler.net/) dedicated to a series of\n\
+[computational problems](https://projecteuler.net/archives) intended to be\n\
+solved with computer programs. The problems are intended for adults and\n\
+students interested in mathematics and computer programming.\n\
+\n\
+This program contains solutions to some of the problems solved with the\n\
+[Rust programing language](https://www.rust-lang.org/en-US/).\n\
+I am solving these recreationally in my spare time. It is unlikely that I will\n\
+have the time or the knowledge to be able to solve all of them.\n\
+\n\
 Usage: project-euler [problem number]\n")
         },
         Some(s) => {

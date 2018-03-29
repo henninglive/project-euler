@@ -23,7 +23,7 @@ impl Iterator for Fib {
     }
 }
 
-pub fn p2() -> String {
+pub fn p002() -> String {
     Fib(0, 1)
         .filter(|i| i % 2 == 0)
         .take_while(|i| *i < 4_000_000)
