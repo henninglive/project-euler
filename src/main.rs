@@ -21,6 +21,7 @@ fn problems() -> BTreeMap<usize, Problem> {
     problems.insert(22,  pe::p022 as Problem);
     problems.insert(24,  pe::p024 as Problem);
     problems.insert(31,  pe::p031 as Problem);
+    problems.insert(48,  pe::p048 as Problem);
     problems
 }
 

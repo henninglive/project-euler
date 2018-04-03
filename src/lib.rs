@@ -18,6 +18,7 @@ mod p016;
 mod p022;
 mod p024;
 mod p031;
+mod p048;
 
 pub use p001::p001;
 pub use p002::p002;
@@ -33,3 +34,4 @@ pub use p016::p016;
 pub use p022::p022;
 pub use p024::p024;
 pub use p031::p031;
+pub use p048::p048;
