@@ -1,17 +1,17 @@
-//! # Large sum
-//! ## Problem 13
+//! **Problem 13**: Large sum
 //!
-//! Work out the first ten digits of the sum of the following one-hundred
-//! 50-digit numbers.
+//! Work out the first ten digits of the sum of the following
+//! [one-hundred 50-digit numbers](static.NUMBERS.html).
 //!
-//! See below ...
+//! [Problem 13 on projecteuler.net](https://projecteuler.net/problem=13)
 //!
 
 use ::num::Num;
 use ::num_bigint::BigUint;
 use ::num_traits::zero;
 
-static NUMBERS: &'static str = "
+/// List of numbers as a new line separated string
+pub static NUMBERS: &'static str = "\
 37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
@@ -113,7 +113,8 @@ static NUMBERS: &'static str = "
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690";
 
-pub fn p013() -> String {
+/// Calculate solution to Problem 13
+pub fn solution() -> String {
     NUMBERS
         .split_whitespace()
         .map(|s| BigUint::from_str_radix(s, 10).unwrap())

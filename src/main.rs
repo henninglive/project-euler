@@ -3,27 +3,27 @@ extern crate project_euler;
 use project_euler as pe;
 use std::collections::BTreeMap;
 
-type Problem = fn() -> String;
+type Solution = fn() -> String;
 
-fn problems() -> BTreeMap<usize, Problem> {
+fn problems() -> BTreeMap<usize, Solution> {
     let mut problems = BTreeMap::new();
-    problems.insert(1,   pe::p001 as Problem);
-    problems.insert(2,   pe::p002 as Problem);
-    problems.insert(4,   pe::p004 as Problem);
-    problems.insert(5,   pe::p005 as Problem);
-    problems.insert(6,   pe::p006 as Problem);
-    problems.insert(8,   pe::p008 as Problem);
-    problems.insert(9,   pe::p009 as Problem);
-    problems.insert(11,  pe::p011 as Problem);
-    problems.insert(13,  pe::p013 as Problem);
-    problems.insert(15,  pe::p015 as Problem);
-    problems.insert(16,  pe::p016 as Problem);
-    problems.insert(18,  pe::p018 as Problem);
-    problems.insert(22,  pe::p022 as Problem);
-    problems.insert(24,  pe::p024 as Problem);
-    problems.insert(31,  pe::p031 as Problem);
-    problems.insert(48,  pe::p048 as Problem);
-    problems.insert(67,  pe::p067 as Problem);
+    problems.insert(1,   pe::p001::solution as Solution);
+    problems.insert(2,   pe::p002::solution as Solution);
+    problems.insert(4,   pe::p004::solution as Solution);
+    problems.insert(5,   pe::p005::solution as Solution);
+    problems.insert(6,   pe::p006::solution as Solution);
+    problems.insert(8,   pe::p008::solution as Solution);
+    problems.insert(9,   pe::p009::solution as Solution);
+    problems.insert(11,  pe::p011::solution as Solution);
+    problems.insert(13,  pe::p013::solution as Solution);
+    problems.insert(15,  pe::p015::solution as Solution);
+    problems.insert(16,  pe::p016::solution as Solution);
+    problems.insert(18,  pe::p018::solution as Solution);
+    problems.insert(22,  pe::p022::solution as Solution);
+    problems.insert(24,  pe::p024::solution as Solution);
+    problems.insert(31,  pe::p031::solution as Solution);
+    problems.insert(48,  pe::p048::solution as Solution);
+    problems.insert(67,  pe::p067::solution as Solution);
     problems
 }
 

@@ -1,5 +1,4 @@
-//! # Smallest multiple
-//! ## Problem 5
+//! **Problem 5**: Smallest multiple
 //!
 //! 2520 is the smallest number that can be divided by each of the numbers from
 //! 1 to 10 without any remainder.
@@ -7,12 +6,14 @@
 //! What is the smallest positive number that is evenly divisible by all of the
 //! numbers from 1 to 20?
 //!
+//! [Problem 5 on projecteuler.net](https://projecteuler.net/problem=5)
+//!
 
 use ::util::Factorize;
-
 use std::collections::HashMap;
 
-pub fn p005() -> String {
+/// Calculate solution to Problem 5
+pub fn solution() -> String {
     let mut min = HashMap::new();
     for i in 1..20+1 {
         let factors = Factorize::new(i).fold(
