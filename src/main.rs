@@ -9,6 +9,7 @@ fn problems() -> BTreeMap<usize, Solution> {
     let mut problems = BTreeMap::new();
     problems.insert(1,   pe::p001::solution as Solution);
     problems.insert(2,   pe::p002::solution as Solution);
+    problems.insert(3,   pe::p003::solution as Solution);
     problems.insert(4,   pe::p004::solution as Solution);
     problems.insert(5,   pe::p005::solution as Solution);
     problems.insert(6,   pe::p006::solution as Solution);
