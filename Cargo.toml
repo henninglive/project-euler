@@ -7,3 +7,4 @@ authors = ["Henning Ottesen <henning@live.no>"]
 num = "0.1.42"
 num-traits = "0.2.2"
 num-bigint = "0.1.43"
+bit-vec = "0.5.1"

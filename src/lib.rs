@@ -1,6 +1,7 @@
 extern crate num;
 extern crate num_traits;
 extern crate num_bigint;
+extern crate bit_vec;
 
 mod util;
 
@@ -13,6 +14,7 @@ pub mod p006;
 pub mod p007;
 pub mod p008;
 pub mod p009;
+pub mod p010;
 pub mod p011;
 pub mod p013;
 pub mod p015;
