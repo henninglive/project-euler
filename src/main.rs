@@ -19,6 +19,7 @@ fn problems() -> BTreeMap<usize, Solution> {
     problems.insert(10,  pe::p010::solution as Solution);
     problems.insert(11,  pe::p011::solution as Solution);
     problems.insert(13,  pe::p013::solution as Solution);
+    problems.insert(14,  pe::p014::solution as Solution);
     problems.insert(15,  pe::p015::solution as Solution);
     problems.insert(16,  pe::p016::solution as Solution);
     problems.insert(18,  pe::p018::solution as Solution);
