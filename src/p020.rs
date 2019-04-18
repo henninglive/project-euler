@@ -9,7 +9,7 @@
 //! [Problem 20 on projecteuler.net](https://projecteuler.net/problem=20)
 //!
 
-use num_bigint::ToBigUint;
+use num::bigint::ToBigUint;
 
 /// Calculate solution to Problem 20
 pub fn solution() -> String {

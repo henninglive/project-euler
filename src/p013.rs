@@ -6,9 +6,7 @@
 //! [Problem 13 on projecteuler.net](https://projecteuler.net/problem=13)
 //!
 
-use ::num::Num;
-use ::num_bigint::BigUint;
-use ::num_traits::zero;
+use ::num::{Num, BigUint, zero};
 
 /// List of numbers as a new line separated string
 pub static NUMBERS: &'static str = "\

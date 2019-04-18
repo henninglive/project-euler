@@ -6,8 +6,7 @@
 //! [Problem 16 on projecteuler.net](https://projecteuler.net/problem=16)
 //!
 
-use ::num_bigint::BigUint;
-use ::num_traits::one;
+use ::num::{BigUint, one};
 
 /// Calculate solution to Problem 16
 pub fn solution() -> String {
