@@ -4,5 +4,5 @@ version = "0.1.0"
 authors = ["Henning Ottesen <henning@live.no>"]
 
 [dependencies]
-num = "0.1.42"
+num = "0.2"
 bit-vec = "0.5.1"
