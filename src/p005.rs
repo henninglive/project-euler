@@ -9,7 +9,7 @@
 //! [Problem 5 on projecteuler.net](https://projecteuler.net/problem=5)
 //!
 
-use ::util::Factorize;
+use crate::util::Factorize;
 use std::collections::HashMap;
 
 /// Calculate solution to Problem 5

@@ -6,7 +6,7 @@
 //! [Problem 3 on projecteuler.net](https://projecteuler.net/problem=3)
 //!
 
-use ::util::Factorize;
+use crate::util::Factorize;
 
 /// Calculate solution to Problem 1
 pub fn solution() -> String {

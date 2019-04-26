@@ -8,8 +8,8 @@
 //! [Problem 56 on projecteuler.net](https://projecteuler.net/problem=56)
 //!
 
-use ::num::bigint::ToBigUint;
-use ::num::pow;
+use num::bigint::ToBigUint;
+use num::pow;
 use std::iter::repeat;
 
 /// Calculate solution to Problem 56

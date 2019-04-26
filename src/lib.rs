@@ -1,6 +1,3 @@
-extern crate num;
-extern crate bit_vec;
-
 mod util;
 
 pub mod p001;

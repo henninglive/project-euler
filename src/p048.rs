@@ -6,7 +6,7 @@
 //! [Problem 48 on projecteuler.net](https://projecteuler.net/problem=48)
 //!
 
-use ::num::{BigUint, FromPrimitive, zero};
+use num::{BigUint, FromPrimitive, zero};
 
 /// Calculate solution to Problem 48
 pub fn solution() -> String {

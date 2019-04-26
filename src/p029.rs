@@ -14,8 +14,8 @@
 //! [Problem 29 on projecteuler.net](https://projecteuler.net/problem=29)
 //!
 
-use ::num::pow::pow;
-use ::num::bigint::ToBigUint;
+use num::pow::pow;
+use num::bigint::ToBigUint;
 
 use std::collections::HashSet;
 use std::iter::repeat;

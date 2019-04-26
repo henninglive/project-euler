@@ -10,7 +10,7 @@
 //! [Problem 15 on projecteuler.net](https://projecteuler.net/problem=15)
 //!
 
-use ::num::{BigUint, one};
+use num::{BigUint, one};
 
 const GRID_SIZE: (usize, usize) = (20, 20);
 
