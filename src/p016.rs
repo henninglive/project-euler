@@ -10,9 +10,8 @@ use num::{BigUint, one};
 
 /// Calculate solution to Problem 16
 pub fn solution() -> String {
-    let mut n = one::<BigUint>();
-    n <<= 1000;
-    n.to_str_radix(10)
+    (one::<BigUint>() << 1000)
+        .to_str_radix(10)
         .chars()
         .map(|c| c.to_digit(10).unwrap())
         .sum::<u32>()

@@ -10,15 +10,13 @@
 //! [Problem 9 on projecteuler.net](https://projecteuler.net/problem=9)
 //!
 
+use std::iter::repeat;
+
 /// Calculate solution to Problem 9
 pub fn solution() -> String {
-    for a in 1..1000 {
-        for b in a..1000 {
-            let c = 1000 - (a + b);
-            if a * a + b * b == c * c {
-                return (a*b*c).to_string()
-            }
-        }
-    }
-    unreachable!();
+    (1..1000).flat_map(|a| repeat(a).zip(a..1000))
+    .map(|(a, b)| (a, b, 1000 - (a + b)))
+    .find(|(a, b, c)| a * a + b * b == c * c )
+    .map(|(a, b, c)| (a*b*c).to_string())
+    .unwrap()
 }

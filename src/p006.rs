@@ -19,8 +19,8 @@
 
 /// Calculate solution to Problem 6
 pub fn solution() -> String {
-    let sum = (1..100+1).sum::<usize>();
+    let sum = (1..=100).sum::<usize>();
     ((sum * sum) -
-        (1..100+1).map(|i| i * i).sum::<usize>()
+        (1..=100).map(|i| i * i).sum::<usize>()
     ).to_string()
 }

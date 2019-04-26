@@ -14,8 +14,8 @@ use std::collections::HashMap;
 
 /// Calculate solution to Problem 5
 pub fn solution() -> String {
-    let mut min = HashMap::new();
-    for i in 1..20+1 {
+    (1..=20)
+    .fold(HashMap::new(), |mut min, i| {
         let factors = Factorize::new(i).fold(
             HashMap::<usize, usize, _>::new(),
             |mut map, f| {
@@ -28,9 +28,9 @@ pub fn solution() -> String {
             let mn = min.entry(f).or_insert(0);
             *mn = ::std::cmp::max(n, *mn);
         }
-    }
-
-    min.into_iter()
-        .fold(1, |p, (f, n)| p * f.pow(n as u32))
-        .to_string()
+        min
+    })
+    .into_iter()
+    .fold(1, |p, (f, n)| p * f.pow(n as u32))
+    .to_string()
 }

@@ -12,7 +12,7 @@ use num::{BigUint, FromPrimitive, zero};
 pub fn solution() -> String {
     let mod_digits = BigUint::from_u64(10_000_000_000).unwrap();
 
-    let sum = (1..(1000 + 1))
+    let sum = (1..=1000)
         .map(|i| {
             let n = BigUint::from_u64(i).unwrap();
             n.modpow(&n, &mod_digits)

@@ -8,6 +8,8 @@
 //! [Problem 4 on projecteuler.net](https://projecteuler.net/problem=4)
 //!
 
+use std::iter::repeat;
+
 fn is_palindrome_base_10(n: usize) -> bool {
     let s = n.to_string();
     let sb = s.as_bytes();
@@ -31,18 +33,14 @@ fn is_palindrome_base_10(n: usize) -> bool {
 
 /// Calculate solution to Problem 4
 pub fn solution() -> String {
-    let mut max = 0;
-    for a in (100..1000).rev() {
-        for b in (100..1000).rev() {
-            let p = a * b;
-            if p <= max {
-                continue;
-            }
-
-            if is_palindrome_base_10(p) {
-                max = p;
-            }
+    (100..1000).rev().flat_map(|a| repeat(a).zip((100..1000).rev()))
+    .map(|(a, b)| a * b)
+    .fold(0, |max, p| {
+        if p > max && is_palindrome_base_10(p) {
+            p
+        } else {
+            max
         }
-    }
-    max.to_string()
+    })
+    .to_string()
 }
