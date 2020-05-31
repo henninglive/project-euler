@@ -14,3 +14,8 @@ pub fn solution() -> String {
         .sum::<usize>()
         .to_string()
 }
+
+#[test]
+fn test_solution() {
+    assert_eq!("233168", solution());
+}

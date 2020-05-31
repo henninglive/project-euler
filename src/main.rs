@@ -1,41 +1,74 @@
-extern crate project_euler;
+mod util;
+mod p001;
+mod p002;
+mod p003;
+mod p004;
+mod p005;
+mod p006;
+mod p007;
+mod p008;
+mod p009;
+mod p010;
+mod p011;
+mod p013;
+mod p014;
+mod p015;
+mod p016;
+mod p018;
+mod p019;
+mod p020;
+mod p022;
+mod p024;
+mod p025;
+mod p029;
+mod p031;
+mod p048;
+mod p052;
+mod p056;
+mod p067;
 
-use project_euler as pe;
-use std::collections::BTreeMap;
-
-type Solution = fn() -> String;
-
-fn problems() -> BTreeMap<usize, Solution> {
-    let mut problems = BTreeMap::new();
-    problems.insert(1,   pe::p001::solution as Solution);
-    problems.insert(2,   pe::p002::solution as Solution);
-    problems.insert(3,   pe::p003::solution as Solution);
-    problems.insert(4,   pe::p004::solution as Solution);
-    problems.insert(5,   pe::p005::solution as Solution);
-    problems.insert(6,   pe::p006::solution as Solution);
-    problems.insert(7,   pe::p007::solution as Solution);
-    problems.insert(8,   pe::p008::solution as Solution);
-    problems.insert(9,   pe::p009::solution as Solution);
-    problems.insert(10,  pe::p010::solution as Solution);
-    problems.insert(11,  pe::p011::solution as Solution);
-    problems.insert(13,  pe::p013::solution as Solution);
-    problems.insert(14,  pe::p014::solution as Solution);
-    problems.insert(15,  pe::p015::solution as Solution);
-    problems.insert(16,  pe::p016::solution as Solution);
-    problems.insert(18,  pe::p018::solution as Solution);
-    problems.insert(19,  pe::p019::solution as Solution);
-    problems.insert(20,  pe::p020::solution as Solution);
-    problems.insert(22,  pe::p022::solution as Solution);
-    problems.insert(24,  pe::p024::solution as Solution);
-    problems.insert(25,  pe::p025::solution as Solution);
-    problems.insert(29,  pe::p029::solution as Solution);
-    problems.insert(31,  pe::p031::solution as Solution);
-    problems.insert(48,  pe::p048::solution as Solution);
-    problems.insert(52,  pe::p052::solution as Solution);
-    problems.insert(56,  pe::p056::solution as Solution);
-    problems.insert(67,  pe::p067::solution as Solution);
-    problems
+macro_rules! solutions {
+    ( $( $name:ident ),* ) => {
+        fn problems() -> std::collections::BTreeMap<usize, fn() -> String> {
+            let mut problems = std::collections::BTreeMap::new();
+            let key = |name: &str| name.trim_start_matches('p').parse::<usize>().unwrap();
+            $(
+                problems.insert(key(stringify!($name)), $name::solution as fn() -> String);
+            )*
+            problems
+        }
+    };
 }
+
+solutions!(
+    p001,
+    p002,
+    p003,
+    p004,
+    p005,
+    p006,
+    p007,
+    p008,
+    p009,
+    p010,
+    p011,
+    p013,
+    p014,
+    p015,
+    p016,
+    p018,
+    p019,
+    p020,
+    p022,
+    p024,
+    p025,
+    p029,
+    p031,
+    p048,
+    p052,
+    p056,
+    p067
+);
 
 fn main() {
     let problems = problems();
@@ -53,7 +86,7 @@ I am solving these recreationally in my spare time. It is unlikely that I will\n
 have the time or the knowledge to be able to solve all of them.\n\
 \n\
 Usage: project-euler [problem number]\n")
-        },
+        }
         Some(s) => {
             match s.parse::<usize>().ok() {
                 Some(i) => {
@@ -61,14 +94,14 @@ Usage: project-euler [problem number]\n")
                         Some(p) => println!("Problem {}: {}", i, p()),
                         None => println!("No solution available for problem {}", i),
                     }
-                },
+                }
                 None => println!("Usage: project-euler [problem number]"),
             }
-        },
+        }
         None => {
             for (i, p) in problems {
                 println!("Problem {}: {}", i, p());
             }
-        },
+        }
     }
 }

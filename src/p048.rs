@@ -24,3 +24,8 @@ pub fn solution() -> String {
 
     (sum % mod_digits).to_str_radix(10)
 }
+
+#[test]
+fn test_solution() {
+    assert_eq!("9110846700", solution());
+}

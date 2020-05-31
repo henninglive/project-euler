@@ -33,7 +33,7 @@
 //!
 
 /// List of numbers as a string
-pub static NUMBERS: &'static str = "\
+pub static NUMBERS: &str = "\
 73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
 85861560789112949495459501737958331952853208805511\
@@ -70,4 +70,9 @@ pub fn solution() -> String {
     }
 
     max.to_string()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("23514624000", solution());
 }

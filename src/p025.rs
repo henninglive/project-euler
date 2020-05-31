@@ -26,17 +26,22 @@
 
 use num::BigUint;
 
-use super::util::Fib;
+use crate::util::Fibonacci;
 
 /// Calculate solution to Problem 25
 pub fn solution() -> String {
     let max = BigUint::parse_bytes("9".repeat(999).as_bytes(), 10)
         .unwrap();
 
-    (Fib::<BigUint>::one()
+    (Fibonacci::<BigUint>::one()
         .enumerate()
         .find(|(_, n)| n > &max)
         .unwrap()
         .0 + 1) // enumerate is zero indexed
         .to_string()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("4782", solution());
 }

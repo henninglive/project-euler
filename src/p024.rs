@@ -14,14 +14,15 @@
 
 pub struct Permutations<'a, T: 'a>(&'a mut [T], bool);
 
+#[allow(clippy::should_implement_trait)]
 impl<'a, T: Ord> Permutations<'a, T> {
     pub fn new(slice: &'a mut [T]) -> Permutations<'a, T> {
-        assert!(slice.len() > 0);
+        assert!(!slice.is_empty());
         slice.sort();
         Permutations(slice, true)
     }
 
-    pub fn next<'b>(&'b mut self) -> Option<&'b mut [T]> {
+    pub fn next(&mut self) -> Option<&mut [T]> {
         if self.1 {
             self.1 = false;
             return Some(self.0);
@@ -69,3 +70,7 @@ pub fn solution() -> String {
     unreachable!();
 }
 
+#[test]
+fn test_solution() {
+    assert_eq!("2783915460", solution());
+}

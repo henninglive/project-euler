@@ -21,6 +21,11 @@ pub fn solution() -> String {
         let d = digits(*i);
         (2..=6).all(|j| d == digits(i * j))
     })
-    .unwrap()
-    .to_string()
+        .unwrap()
+        .to_string()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("142857", solution());
 }

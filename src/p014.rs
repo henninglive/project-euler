@@ -43,3 +43,8 @@ pub fn solution() -> String {
         .unwrap().1
         .to_string()
 }
+
+#[test]
+fn test_solution() {
+    assert_eq!("837799", solution());
+}

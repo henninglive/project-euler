@@ -10,9 +10,14 @@ use crate::util::Factorize;
 
 /// Calculate solution to Problem 1
 pub fn solution() -> String {
-	let mut factors = Factorize::new(600851475143).collect::<Vec<_>>();
-	factors.sort();
-	factors.last()
-		.map(|i| i.to_string())
-		.unwrap()
+    let mut factors = Factorize::new(600_851_475_143).collect::<Vec<_>>();
+    factors.sort();
+    factors.last()
+        .map(|i| i.to_string())
+        .unwrap()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("6857", solution());
 }

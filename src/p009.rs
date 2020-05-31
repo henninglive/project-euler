@@ -15,8 +15,13 @@ use std::iter::repeat;
 /// Calculate solution to Problem 9
 pub fn solution() -> String {
     (1..1000).flat_map(|a| repeat(a).zip(a..1000))
-    .map(|(a, b)| (a, b, 1000 - (a + b)))
-    .find(|(a, b, c)| a * a + b * b == c * c )
-    .map(|(a, b, c)| (a*b*c).to_string())
-    .unwrap()
+        .map(|(a, b)| (a, b, 1000 - (a + b)))
+        .find(|(a, b, c)| a * a + b * b == c * c)
+        .map(|(a, b, c)| (a * b * c).to_string())
+        .unwrap()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("31875000", solution());
 }

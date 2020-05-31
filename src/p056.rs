@@ -15,10 +15,15 @@ use std::iter::repeat;
 /// Calculate solution to Problem 56
 pub fn solution() -> String {
     (2..100usize)
-    .flat_map(|a| (2..100usize).zip(repeat(a)))
-    .map(|(a, b)| pow(a.to_biguint().unwrap(), b))
-    .map(|i| i.to_str_radix(10).chars().map(|c| c.to_digit(10).unwrap()).sum::<u32>())
-    .max()
-    .unwrap()
-    .to_string()
+        .flat_map(|a| (2..100usize).zip(repeat(a)))
+        .map(|(a, b)| pow(a.to_biguint().unwrap(), b))
+        .map(|i| i.to_str_radix(10).chars().map(|c| c.to_digit(10).unwrap()).sum::<u32>())
+        .max()
+        .unwrap()
+        .to_string()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("972", solution());
 }

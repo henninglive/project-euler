@@ -24,3 +24,8 @@ pub fn solution() -> String {
         (1..=100).map(|i| i * i).sum::<usize>()
     ).to_string()
 }
+
+#[test]
+fn test_solution() {
+    assert_eq!("25164150", solution());
+}

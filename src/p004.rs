@@ -33,14 +33,21 @@ fn is_palindrome_base_10(n: usize) -> bool {
 
 /// Calculate solution to Problem 4
 pub fn solution() -> String {
-    (100..1000).rev().flat_map(|a| repeat(a).zip((100..1000).rev()))
-    .map(|(a, b)| a * b)
-    .fold(0, |max, p| {
-        if p > max && is_palindrome_base_10(p) {
-            p
-        } else {
-            max
-        }
-    })
-    .to_string()
+    (100..1000)
+        .rev()
+        .flat_map(|a| repeat(a).zip((100..1000).rev()))
+        .map(|(a, b)| a * b)
+        .fold(0, |max, p| {
+            if p > max && is_palindrome_base_10(p) {
+                p
+            } else {
+                max
+            }
+        })
+        .to_string()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("906609", solution());
 }

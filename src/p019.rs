@@ -22,16 +22,16 @@ fn is_leap_year(year: usize) -> bool {
 
 fn days_in_month(month: usize, year: usize) -> usize {
     match month {
-        0 =>  31,
-        1 =>  if is_leap_year(year) { 29 } else { 28 },
-        2 =>  31,
-        3 =>  30,
-        4 =>  31,
-        5 =>  30,
-        6 =>  31,
-        7 =>  31,
-        8 =>  30,
-        9 =>  31,
+        0 => 31,
+        1 => if is_leap_year(year) { 29 } else { 28 },
+        2 => 31,
+        3 => 30,
+        4 => 31,
+        5 => 30,
+        6 => 31,
+        7 => 31,
+        8 => 30,
+        9 => 31,
         10 => 30,
         11 => 31,
         _ => panic!(),
@@ -45,17 +45,17 @@ pub fn solution() -> String {
     let mut weekday = 0;
     let mut day = 0;
     let mut count = 0;
-    
+
     while year < 2001 {
         if year > 1900 && weekday == 6 && day == 0 {
             count += 1;
         }
-        
+
         weekday += 1;
         if weekday > 6 {
             weekday = 0;
         }
-        
+
         day += 1;
         if day > days_in_month(month, year) {
             day = 0;
@@ -68,4 +68,9 @@ pub fn solution() -> String {
     }
 
     count.to_string()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("171", solution());
 }

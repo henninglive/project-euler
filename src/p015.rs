@@ -15,7 +15,7 @@ use num::{BigUint, one};
 const GRID_SIZE: (usize, usize) = (20, 20);
 
 fn factorial(n: usize) -> BigUint {
-    (2usize..n+1).fold(one::<BigUint>(), |mut p, i| {
+    (2usize..n + 1).fold(one::<BigUint>(), |mut p, i| {
         p *= i;
         p
     })
@@ -30,4 +30,9 @@ pub fn solution() -> String {
     // The number of lattice paths from (0,0) to (n,k) is equal to the
     // binomial coefficient (n + k, k)
     binomial_coefficient(GRID_SIZE.0 + GRID_SIZE.1, GRID_SIZE.1).to_str_radix(10)
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("137846528820", solution());
 }

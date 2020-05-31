@@ -40,3 +40,8 @@ pub fn solution() -> String {
     recursive(0, 0, &mut count);
     count.to_string()
 }
+
+#[test]
+fn test_solution() {
+    assert_eq!("73682", solution());
+}

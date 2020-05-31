@@ -11,13 +11,18 @@
 //! [Problem 2 on projecteuler.net](https://projecteuler.net/problem=2)
 //!
 
-use super::util::Fib;
+use crate::util::Fibonacci;
 
 /// Calculate solution to Problem 2
 pub fn solution() -> String {
-    Fib::<usize>::one()
+    Fibonacci::<usize>::one()
         .filter(|i| i % 2 == 0)
         .take_while(|i| *i < 4_000_000)
         .sum::<usize>()
-        .to_string() 
+        .to_string()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("4613732", solution());
 }

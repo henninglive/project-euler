@@ -16,7 +16,7 @@ pub fn solution() -> String {
     bv.set(0, false);
     bv.set(1, false);
 
-    for i in 2..(1+(MAX as f64).sqrt() as usize) {
+    for i in 2..(1 + (MAX as f64).sqrt() as usize) {
         if bv[i] {
             for j in i.. {
                 if i * j >= MAX {
@@ -29,7 +29,12 @@ pub fn solution() -> String {
 
     bv.into_iter()
         .enumerate()
-        .filter_map(|(i, b)| if b { Some(i) } else { None } )
+        .filter_map(|(i, b)| if b { Some(i) } else { None })
         .sum::<usize>()
         .to_string()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("142913828922", solution());
 }

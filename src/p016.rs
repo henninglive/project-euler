@@ -17,3 +17,8 @@ pub fn solution() -> String {
         .sum::<u32>()
         .to_string()
 }
+
+#[test]
+fn test_solution() {
+    assert_eq!("1366", solution());
+}

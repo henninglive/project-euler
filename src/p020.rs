@@ -17,7 +17,12 @@ pub fn solution() -> String {
         .fold(1.to_biguint().unwrap(), |p, i| p * i.to_biguint().unwrap())
         .to_string()
         .chars()
-        .map(|c| c. to_digit(10).unwrap())
+        .map(|c| c.to_digit(10).unwrap())
         .sum::<u32>()
         .to_string()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("648", solution());
 }

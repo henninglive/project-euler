@@ -27,7 +27,7 @@
 //!
 
 /// Triangle as a string
-pub static TRIANGLE: &'static str = "\
+pub static TRIANGLE: &str = "\
 59
 73 41
 52 40 09
@@ -140,12 +140,17 @@ pub fn solution() -> String {
         })
         .fold::<Option<Vec<usize>>, _>(None, |prev, mut l| {
             if let Some(prev) = prev {
-               for (i, e) in l.iter_mut().enumerate() {
-                    *e += ::std::cmp::max(prev[i], prev[i+1]);
+                for (i, e) in l.iter_mut().enumerate() {
+                    *e += ::std::cmp::max(prev[i], prev[i + 1]);
                 }
             }
             Some(l)
         })
         .unwrap()[0]
         .to_string()
+}
+
+#[test]
+fn test_solution() {
+    assert_eq!("7273", solution());
 }
