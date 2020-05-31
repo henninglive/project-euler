@@ -22,6 +22,7 @@ mod p024;
 mod p025;
 mod p029;
 mod p031;
+mod p043;
 mod p048;
 mod p052;
 mod p056;
@@ -64,6 +65,7 @@ solutions!(
     p025,
     p029,
     p031,
+    p043,
     p048,
     p052,
     p056,
