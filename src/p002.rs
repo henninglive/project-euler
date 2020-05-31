@@ -11,22 +11,11 @@
 //! [Problem 2 on projecteuler.net](https://projecteuler.net/problem=2)
 //!
 
-#[derive(Debug)]
-struct Fib(usize, usize);
-
-impl Iterator for Fib {
-    type Item = usize;
-    fn next(&mut self) -> Option<usize> {
-        let next = self.0 + self.1;
-        self.0 = self.1;
-        self.1 = next;
-        Some(next)
-    }
-}
+use super::util::Fib;
 
 /// Calculate solution to Problem 2
 pub fn solution() -> String {
-    Fib(0, 1)
+    Fib::<usize>::one()
         .filter(|i| i % 2 == 0)
         .take_while(|i| *i < 4_000_000)
         .sum::<usize>()

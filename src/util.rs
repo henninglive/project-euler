@@ -1,4 +1,31 @@
 
+use num::Integer;
+
+#[derive(Debug)]
+pub struct Fib<I: Integer>(I, I);
+
+impl<I: Integer + Clone> Iterator for Fib<I> {
+    type Item = I;
+    fn next(&mut self) -> Option<I> {
+        let mut tmp = self.1.clone() + self.0.clone();
+        std::mem::swap(&mut tmp, &mut self.1);
+        std::mem::swap(&mut tmp, &mut self.0);
+        Some(tmp)
+    }
+}
+
+impl<I: Integer> Fib<I> {
+    /*
+    pub fn zero() -> Fib<I> {
+        Fib(I::zero(), I::one())
+    }
+    */
+
+    pub fn one() -> Fib<I> {
+        Fib(I::one(), I::one())
+    }
+}
+
 #[derive(Debug, Clone)]
 pub struct Factorize(usize);
 
